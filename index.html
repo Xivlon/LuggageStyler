@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background: #000000;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luggsters - Worry Free Travel</title>
     <style>
+        /* Prevent white flash on load */
+        html, body {
+            background-color: #000000 !important;
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+        
+        html {
+            background: #000000;
         }
         
         body {
@@ -17,6 +25,7 @@
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
             color: #ffffff;
             overflow-x: hidden;
+            min-height: 100vh;
         }
         
         .container {
