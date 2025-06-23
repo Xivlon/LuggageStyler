@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luggsters - Worry Free Travel</title>
     <style>
-        /* Prevent white flash on load */
+        /* Prevent flash on load */
         html, body {
-            background-color: #000000 !important;
+            background-color: #ffffff !important;
         }
         * {
             margin: 0;
@@ -16,14 +16,14 @@
         }
         
         html {
-            background: #1a1a1a;
+            background: #ffffff;
         }
         
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-            color: #ffffff;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+            color: #2d3748;
             overflow-x: hidden;
             min-height: 100vh;
         }
@@ -133,7 +133,7 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
         }
         
         .hero::before {
@@ -160,7 +160,7 @@
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, #68d391, #4a7c59, #68d391);
+            background: linear-gradient(45deg, #4a5568, #2d3748, #4a5568);
             background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -174,7 +174,7 @@
         
         .hero p {
             font-size: 1.3rem;
-            color: #a0aec0;
+            color: #718096;
             margin-bottom: 2rem;
             max-width: 600px;
             margin-left: auto;
@@ -203,7 +203,7 @@
         /* Pricing Section */
         .pricing {
             padding: 100px 0;
-            background: rgba(26, 26, 26, 0.9);
+            background: rgba(247, 250, 252, 0.8);
             backdrop-filter: blur(10px);
         }
         
@@ -211,7 +211,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #ffffff;
+            color: #2d3748;
         }
         
         .pricing-cards {
@@ -223,15 +223,15 @@
         }
         
         .pricing-card {
-            background: rgba(45, 45, 45, 0.9);
-            border: 1px solid rgba(104, 211, 145, 0.3);
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(160, 174, 192, 0.3);
             border-radius: 20px;
             padding: 2rem;
             text-align: center;
             position: relative;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
         
         .pricing-card:hover {
@@ -243,7 +243,7 @@
         .pricing-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #ffffff;
+            color: #2d3748;
         }
         
         .price {
@@ -258,7 +258,7 @@
         }
         
         .price-period {
-            color: #a0aec0;
+            color: #718096;
             font-size: 1rem;
             margin-bottom: 1rem;
         }
@@ -270,7 +270,7 @@
         }
         
         .plan-validity {
-            color: #a0aec0;
+            color: #718096;
             font-size: 0.9rem;
             margin-bottom: 2rem;
         }
@@ -297,14 +297,14 @@
         /* Contact Section */
         .contact {
             padding: 100px 0;
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(45, 45, 45, 0.8) 100%);
+            background: linear-gradient(135deg, rgba(237, 242, 247, 0.5) 0%, rgba(247, 250, 252, 0.5) 100%);
         }
         
         .contact h2 {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #ffffff;
+            color: #2d3748;
         }
         
         .contact-content {
@@ -317,11 +317,11 @@
         .contact-info h3 {
             font-size: 2rem;
             margin-bottom: 2rem;
-            color: #ffffff;
+            color: #2d3748;
         }
         
         .contact-details {
-            color: #a0aec0;
+            color: #718096;
             line-height: 1.8;
         }
         
@@ -330,12 +330,12 @@
         }
         
         .contact-form {
-            background: rgba(45, 45, 45, 0.9);
+            background: rgba(255, 255, 255, 0.9);
             padding: 2rem;
             border-radius: 20px;
-            border: 1px solid rgba(104, 211, 145, 0.3);
+            border: 1px solid rgba(160, 174, 192, 0.3);
             backdrop-filter: blur(10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
         
         .form-row {
@@ -352,7 +352,7 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            color: #ffffff;
+            color: #4a5568;
             font-weight: bold;
         }
         
@@ -360,10 +360,10 @@
         .form-group textarea {
             width: 100%;
             padding: 12px;
-            background: rgba(26, 26, 26, 0.8);
-            border: 1px solid rgba(104, 211, 145, 0.4);
+            background: rgba(247, 250, 252, 0.8);
+            border: 1px solid rgba(160, 174, 192, 0.4);
             border-radius: 10px;
-            color: #ffffff;
+            color: #2d3748;
             font-size: 1rem;
             transition: all 0.3s ease;
         }
@@ -372,13 +372,13 @@
         .form-group textarea:focus {
             outline: none;
             border-color: #68d391;
-            box-shadow: 0 0 10px rgba(104, 211, 145, 0.3);
-            background: rgba(45, 45, 45, 0.9);
+            box-shadow: 0 0 10px rgba(104, 211, 145, 0.1);
+            background: rgba(255, 255, 255, 0.9);
         }
         
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-            color: #718096;
+            color: #a0aec0;
         }
         
         textarea {
@@ -407,14 +407,14 @@
         
         /* Footer */
         footer {
-            background: #000000;
+            background: rgba(45, 55, 72, 0.95);
             padding: 2rem 0;
             text-align: center;
-            border-top: 1px solid rgba(104, 211, 145, 0.3);
+            border-top: 1px solid rgba(160, 174, 192, 0.2);
         }
         
         footer p {
-            color: #a0aec0;
+            color: #cbd5e0;
         }
         
         /* Responsive */
@@ -456,7 +456,7 @@
         }
         
         ::-webkit-scrollbar-track {
-            background: #1a1a1a;
+            background: #edf2f7;
         }
         
         ::-webkit-scrollbar-thumb {
