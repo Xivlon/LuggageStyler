@@ -84,8 +84,11 @@ Changelog:
 - June 23, 2025: Initial setup
 - June 23, 2025: Enhanced visual design with eye-friendly color palette
 - June 23, 2025: Integrated logo with black header and gradient border accents
-- June 23, 2025: Implemented dark theme throughout entire website
-- June 23, 2025: Fixed header rendering issues with improved text display
+- June 23, 2025: Converted to white background theme with black header contrast
+- June 23, 2025: Added beach background image to hero section
+- June 23, 2025: Added luggage background image to contact section
+- June 23, 2025: Created comprehensive About section with company information
+- June 23, 2025: Updated About section content to reflect luggage storage & delivery services
 ```
 
 ## User Preferences
