@@ -15,44 +15,23 @@
             box-sizing: border-box;
         }
         
-        *, *::before, *::after {
-            background-color: inherit;
-        }
-        
         html {
-            background: #000000;
-            width: 100%;
-            height: 100%;
+            background: #1a1a1a;
         }
         
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            background: #000000;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
             color: #ffffff;
             overflow-x: hidden;
             min-height: 100vh;
-            width: 100vw;
-            margin: 0;
-            padding: 0;
-        }
-        
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-            z-index: -1;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            width: 100%;
         }
         
         /* Header */
