@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luggsters - Complete Your Membership</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(104, 211, 145, 0.2);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #68d391;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #68d391, #48bb78);
+            border-radius: 8px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-icon::before {
+            content: '🧳';
+            font-size: 20px;
+        }
+        
+        .back-link {
+            color: #68d391;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #48bb78;
+        }
+        
+        /* Main Content */
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+        
+        .membership-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(104, 211, 145, 0.3);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        .membership-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #68d391;
+        }
+        
+        .membership-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #cbd5e0;
+        }
+        
+        .plan-details {
+            background: rgba(104, 211, 145, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(104, 211, 145, 0.3);
+        }
+        
+        .plan-details h2 {
+            color: #68d391;
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #68d391;
+            margin-bottom: 0.5rem;
+        }
+        
+        .price-period {
+            font-size: 1.1rem;
+            color: #a0aec0;
+            margin-bottom: 1.5rem;
+        }
+        
+        .features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        
+        .features li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #68d391;
+            font-weight: bold;
+        }
+        
+        .payment-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(104, 211, 145, 0.2);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #cbd5e0;
+            font-weight: bold;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(104, 211, 145, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #68d391;
+            box-shadow: 0 0 10px rgba(104, 211, 145, 0.2);
+        }
+        
+        .form-group input::placeholder {
+            color: #a0aec0;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .submit-button {
+            background: linear-gradient(45deg, #68d391, #48bb78);
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(104, 211, 145, 0.3);
+            background: linear-gradient(45deg, #48bb78, #38a169);
+        }
+        
+        .security-note {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #a0aec0;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .membership-content {
+                padding: 2rem;
+                margin: 0 1rem;
+            }
+            
+            .membership-content h1 {
+                font-size: 2rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <span>Luggsters</span>
+            </div>
+            <a href="index1.html" class="back-link">← Back to Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="membership-content">
+                <h1>Complete Your Membership</h1>
+                <p>Join thousands of travelers who trust Luggsters for worry-free travel protection.</p>
+                
+                <div class="plan-details">
+                    <h2>Monthly Membership</h2>
+                    <div class="price">$9.99</div>
+                    <div class="price-period">per month</div>
+                    
+                    <ul class="features">
+                        <li>Comprehensive luggage protection</li>
+                        <li>24/7 customer support</li>
+                        <li>Travel assistance worldwide</li>
+                        <li>Lost luggage recovery service</li>
+                        <li>Trip delay compensation</li>
+                        <li>Mobile app access</li>
+                    </ul>
+                </div>
+                
+                <form class="payment-form" id="membershipForm">
+                    <h3 style="margin-bottom: 1.5rem; color: #68d391;">Payment Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiryDate">Expiry Date</label>
+                            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" maxlength="5" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Complete Membership - $9.99/month</button>
+                    
+                    <div class="security-note">
+                        🔒 Your payment information is secure and encrypted
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Format card number input
+        document.getElementById('cardNumber').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s/g, '').replace(/[^0-9]/gi, '');
+            let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+            e.target.value = formattedValue;
+        });
+
+        // Format expiry date input
+        document.getElementById('expiryDate').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 2) {
+                value = value.substring(0, 2) + '/' + value.substring(2, 4);
+            }
+            e.target.value = value;
+        });
+
+        // CVV input - numbers only
+        document.getElementById('cvv').addEventListener('input', function(e) {
+            e.target.value = e.target.value.replace(/[^0-9]/g, '');
+        });
+
+        // Form submission
+        document.getElementById('membershipForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Basic validation
+            if (!data.fullName || !data.email || !data.cardNumber || !data.expiryDate || !data.cvv) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Validate card number (basic length check)
+            const cardNumber = data.cardNumber.replace(/\s/g, '');
+            if (cardNumber.length < 13 || cardNumber.length > 19) {
+                alert('Please enter a valid card number.');
+                return;
+            }
+            
+            // Validate expiry date
+            const expiryRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
+            if (!expiryRegex.test(data.expiryDate)) {
+                alert('Please enter a valid expiry date (MM/YY format).');
+                return;
+            }
+            
+            // Validate CVV
+            if (data.cvv.length < 3 || data.cvv.length > 4) {
+                alert('Please enter a valid CVV.');
+                return;
+            }
+            
+            // Show success message
+            alert('Membership activated successfully! Welcome to Luggsters family. You will receive a confirmation email shortly.');
+            
+            // In a real implementation, you would send this data to your server
+            console.log('Membership data:', data);
+            
+            // Redirect to success page or home
+            window.location.href = 'index1.html';
+        });
+    </script>
+</body>
+</html>
