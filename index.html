@@ -838,8 +838,11 @@
                 if (planName === 'Monthly Membership') {
                     // Redirect to membership portal for monthly plan
                     window.location.href = 'membership.html';
+                } else if (planName === 'Annual Membership') {
+                    // Redirect to membership portal for annual plan
+                    window.location.href = 'annual-membership.html';
                 } else {
-                    // For annual membership, show alert for now
+                    // For other plans, show alert
                     const price = card.querySelector('.price').textContent;
                     alert(`You selected the ${planName} for ${price}. Redirecting to checkout...`);
                 }

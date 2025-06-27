@@ -109,6 +109,7 @@ The application implements a flexible storage abstraction that supports:
 Changelog:
 - June 27, 2025. Initial setup
 - June 27, 2025. Added membership signup page (membership.html) and linked monthly membership button to complete payment flow
+- June 27, 2025. Created annual membership page (annual-membership.html) with enhanced features and savings benefits
 ```
 
 ## User Preferences
