@@ -108,6 +108,7 @@ The application implements a flexible storage abstraction that supports:
 ```
 Changelog:
 - June 27, 2025. Initial setup
+- June 27, 2025. Added membership signup page (membership.html) and linked monthly membership button to complete payment flow
 ```
 
 ## User Preferences
