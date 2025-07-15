@@ -1,6 +1,0 @@
-# Cloudflare Pages redirects for Luggsters
-/api/* https://luggsters-payment-api.workers.dev/:splat 200
-/membership /membership.html 200
-/annual-membership /annual-membership.html 200
-/index /index.html 200
-/* /index.html 200

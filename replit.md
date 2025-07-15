@@ -110,11 +110,9 @@ Changelog:
 - June 27, 2025. Initial setup
 - June 27, 2025. Added membership signup page (membership.html) and linked monthly membership button to complete payment flow
 - June 27, 2025. Created annual membership page (annual-membership.html) with enhanced features and savings benefits
-- July 15, 2025. Integrated Stripe payment processing with secure payment forms
-- July 15, 2025. Added payment-server.js backend for handling real payments
-- July 15, 2025. Updated forms to use Stripe Elements for PCI compliance
-- July 15, 2025. Added Cloudflare deployment configuration (Workers and Pages)
-- July 15, 2025. Created comprehensive deployment scripts and documentation
+- July 15, 2025. Removed payment system and membership pages
+- July 15, 2025. Updated pricing buttons to show "Coming Soon" messages
+- July 15, 2025. Cleaned up payment-related files and configurations
 ```
 
 ## User Preferences
