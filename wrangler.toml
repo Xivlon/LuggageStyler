@@ -1,0 +1,22 @@
+name = "luggsters-website"
+main = "index.html"
+compatibility_date = "2025-07-15"
+
+[build]
+command = ""
+cwd = "."
+
+[site]
+bucket = "."
+entry-point = "."
+include = ["*.html", "assets/**/*"]
+exclude = ["node_modules", "attached_assets", "MembershipPro"]
+
+[env.production]
+name = "luggsters-website-production"
+
+[env.staging]
+name = "luggsters-website-staging"
+
+[vars]
+ENVIRONMENT = "production"

@@ -114,6 +114,7 @@ Changelog:
 - July 15, 2025. Updated pricing buttons to show "Coming Soon" messages
 - July 15, 2025. Cleaned up payment-related files and configurations
 - July 15, 2025. Removed all pop-up alerts for cleaner user experience
+- July 15, 2025. Added GitHub deployment configuration files (wrangler.toml, wrangler.json)
 ```
 
 ## User Preferences

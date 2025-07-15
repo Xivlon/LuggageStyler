@@ -1,0 +1,27 @@
+{
+  "name": "luggsters-website",
+  "type": "site",
+  "account_id": "",
+  "compatibility_date": "2025-07-15",
+  "site": {
+    "bucket": ".",
+    "entry-point": ".",
+    "include": ["*.html", "assets/**/*"],
+    "exclude": ["node_modules", "attached_assets", "MembershipPro"]
+  },
+  "build": {
+    "command": "",
+    "cwd": "."
+  },
+  "environment": {
+    "production": {
+      "name": "luggsters-website-production"
+    },
+    "staging": {
+      "name": "luggsters-website-staging"
+    }
+  },
+  "vars": {
+    "ENVIRONMENT": "production"
+  }
+}
