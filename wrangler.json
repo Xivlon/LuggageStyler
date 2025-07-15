@@ -1,0 +1,66 @@
+{
+  "name": "luggsters-website",
+  "type": "javascript",
+  "account_id": "",
+  "compatibility_date": "2025-07-15",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "payment-server.js",
+  "environment": {
+    "production": {
+      "name": "luggsters-website-production",
+      "route": "luggsters.com/*",
+      "variables": {
+        "ENVIRONMENT": "production"
+      }
+    },
+    "staging": {
+      "name": "luggsters-website-staging", 
+      "route": "staging.luggsters.com/*",
+      "variables": {
+        "ENVIRONMENT": "staging"
+      }
+    }
+  },
+  "vars": {
+    "ENVIRONMENT": "development"
+  },
+  "build": {
+    "command": "npm run build",
+    "cwd": "./",
+    "upload": {
+      "format": "service-worker"
+    }
+  },
+  "kv_namespaces": [
+    {
+      "binding": "LUGGSTERS_KV",
+      "id": "",
+      "preview_id": ""
+    }
+  ],
+  "services": [
+    {
+      "binding": "PAYMENT_SERVICE",
+      "service": "luggsters-payment-service"
+    }
+  ],
+  "wasm_modules": {},
+  "text_blobs": {},
+  "data_blobs": {},
+  "durable_objects": {
+    "bindings": []
+  },
+  "migrations": [],
+  "site": {
+    "bucket": "./dist",
+    "entry-point": "workers-site",
+    "include": ["**/*"],
+    "exclude": ["node_modules"]
+  },
+  "dev": {
+    "ip": "0.0.0.0",
+    "port": 8787,
+    "local_protocol": "http",
+    "upstream_protocol": "https"
+  }
+}
