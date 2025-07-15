@@ -113,6 +113,7 @@ Changelog:
 - July 15, 2025. Removed payment system and membership pages
 - July 15, 2025. Updated pricing buttons to show "Coming Soon" messages
 - July 15, 2025. Cleaned up payment-related files and configurations
+- July 15, 2025. Removed all pop-up alerts for cleaner user experience
 ```
 
 ## User Preferences
