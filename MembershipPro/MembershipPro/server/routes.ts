@@ -1,8 +1,16 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
+import Stripe from "stripe";
 import { storage } from "./storage";
 import { insertPaymentSchema } from "@shared/schema";
 import { z } from "zod";
+
+if (!process.env.STRIPE_SECRET_KEY) {
+  throw new Error('Missing required Stripe secret: STRIPE_SECRET_KEY');
+}
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+  apiVersion: "2023-10-16",
+});
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Get membership plans
@@ -34,6 +42,30 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Create Stripe payment intent
+  app.post("/api/create-payment-intent", async (req, res) => {
+    try {
+      const { amount, planType } = req.body;
+      
+      if (!amount || !planType) {
+        return res.status(400).json({ message: "Amount and plan type are required" });
+      }
+
+      const paymentIntent = await stripe.paymentIntents.create({
+        amount: Math.round(amount * 100), // Convert to cents
+        currency: "usd",
+        metadata: {
+          planType: planType
+        }
+      });
+
+      res.json({ clientSecret: paymentIntent.client_secret });
+    } catch (error: any) {
+      console.error("Error creating payment intent:", error);
+      res.status(500).json({ message: "Error creating payment intent: " + error.message });
+    }
+  });
+
   // Process payment
   app.post("/api/payments", async (req, res) => {
     try {
@@ -52,18 +84,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const plan = await storage.getMembershipPlan(paymentData.planId);
       if (!plan) {
         return res.status(404).json({ message: "Selected plan not found" });
-      }
-
-      // Simulate payment processing delay
-      await new Promise(resolve => setTimeout(resolve, 2000));
-
-      // Mock payment processing - in real app would integrate with Stripe/PayPal
-      const isPaymentSuccessful = Math.random() > 0.1; // 90% success rate
-
-      if (!isPaymentSuccessful) {
-        return res.status(400).json({ 
-          message: "Payment failed. Please check your card details and try again." 
-        });
       }
 
       // Create payment record (excluding sensitive card data)
