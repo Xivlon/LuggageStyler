@@ -1073,8 +1073,18 @@
             try {
                 // Send form data to backend
                 console.log('Sending form data:', data);
-                // Use relative path to ensure it goes to the current server
-                const apiUrl = '/api/contact';
+                console.log('Current location:', window.location.href);
+                
+                // Force the correct development server URL
+                let apiUrl;
+                // Check if we're on the production domain
+                if (window.location.hostname === 'lugg-ster.com' || window.location.hostname === 'www.lugg-ster.com') {
+                    // For production domain without backend, show a helpful message
+                    throw new Error('Contact form is not available on the production site. Please use luggsters@gmail.com to get in touch.');
+                } else {
+                    // For development (Replit or localhost)
+                    apiUrl = '/api/contact';
+                }
                 console.log('API URL:', apiUrl);
                 const response = await fetch(apiUrl, {
                     method: 'POST',

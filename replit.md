@@ -6,11 +6,18 @@ Luggsters is a revolutionary Uber-style platform created exclusively for the pic
 
 ## System Architecture
 
-### Static Website Architecture
-The application is a single-page static website designed for driver recruitment:
+### Hybrid Website Architecture
+The application operates in two modes:
 
-1. **Static Landing Page**: HTML/CSS website showcasing the driver platform and recruitment process
-2. **Driver-Focused Content**: Information about joining the Luggster network, earnings, and requirements
+**Development Mode (Replit):**
+- Node.js server with Express backend
+- Live contact form with Resend email integration
+- Full interactive features including form submissions
+
+**Production Mode (lugg-ster.com):**
+- Static HTML/CSS website served via Cloudflare Pages
+- Driver recruitment content and information
+- Contact form requires backend deployment for full functionality
 
 ### Frontend Architecture
 - **Landing Page**: Pure HTML5 with inline CSS, featuring dark theme design with green gradient accents
