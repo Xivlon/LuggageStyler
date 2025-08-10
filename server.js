@@ -38,7 +38,7 @@ app.post('/api/contact', async (req, res) => {
         // Send email using Resend
         const emailData = await resend.emails.send({
             from: 'Luggsters Contact Form <onboarding@resend.dev>',
-            to: 'admin@holdmyluggage.com',
+            to: 'nuruddinsattar@gmail.com',
             subject: `New Contact Form Submission: ${subject}`,
             html: `
                 <h2>New Contact Form Submission</h2>
