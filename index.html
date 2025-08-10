@@ -875,7 +875,7 @@
         });
 
         // Form submission handler
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+        document.querySelector('.contact-form').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             // Get form data
@@ -884,13 +884,54 @@
             
             // Simple validation
             if (!data.firstName || !data.lastName || !data.email || !data.subject || !data.message) {
-                // Highlight required fields or show inline message
                 return;
             }
-            
-            // Here you would typically send the data to a server
-            // Form submitted successfully
-            this.reset();
+
+            // Disable submit button and show loading state
+            const submitButton = this.querySelector('.submit-button');
+            const originalText = submitButton.textContent;
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            try {
+                // Send form data to backend
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Clear form and show success
+                    this.reset();
+                    submitButton.textContent = 'Message Sent!';
+                    submitButton.style.background = 'linear-gradient(45deg, #38a169, #48bb78)';
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        submitButton.disabled = false;
+                        submitButton.textContent = originalText;
+                        submitButton.style.background = '';
+                    }, 3000);
+                } else {
+                    throw new Error(result.error || 'Failed to send message');
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                submitButton.textContent = 'Error - Try Again';
+                submitButton.style.background = 'linear-gradient(45deg, #e53e3e, #c53030)';
+                
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalText;
+                    submitButton.style.background = '';
+                }, 3000);
+            }
         });
 
         // Pricing plan selection handlers
