@@ -20,6 +20,10 @@ app.use(express.static('.'));
 
 // Contact form endpoint
 app.post('/api/contact', async (req, res) => {
+    console.log('Received POST request to /api/contact');
+    console.log('Request headers:', req.headers);
+    console.log('Request body:', req.body);
+    
     try {
         const { firstName, lastName, email, subject, message } = req.body;
         
@@ -58,6 +62,11 @@ app.post('/api/contact', async (req, res) => {
 
     } catch (error) {
         console.error('Error sending email:', error);
+        console.error('Full error details:', {
+            message: error.message,
+            stack: error.stack,
+            name: error.name
+        });
         res.status(500).json({ 
             success: false, 
             error: 'Failed to send message. Please try again later.' 
