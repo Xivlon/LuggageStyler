@@ -1073,7 +1073,8 @@
             try {
                 // Send form data to backend
                 console.log('Sending form data:', data);
-                const apiUrl = window.location.origin + '/api/contact';
+                // Use relative path to ensure it goes to the current server
+                const apiUrl = '/api/contact';
                 console.log('API URL:', apiUrl);
                 const response = await fetch(apiUrl, {
                     method: 'POST',
