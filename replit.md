@@ -1,69 +1,54 @@
-# Luggsters - Worry Free Travel
+# Luggsters, Inc. - The Drivers Company
 
 ## Overview
 
-Luggsters is a comprehensive travel service application that provides luggage protection and worry-free travel solutions. The project consists of two main components: a static landing page and a full-stack membership portal. The application allows users to view travel services, select membership plans, and complete secure payment processing.
+Luggsters is a revolutionary Uber-style platform created exclusively for the pick-up and delivery of luggage. The company partners with trusted drivers—Luggsters—to ensure a smooth, professional, and efficient experience for travelers. The platform operates as a driver recruitment and management website, focusing on building a nationwide network of luggage delivery professionals.
 
 ## System Architecture
 
-### Hybrid Architecture Design
-The application employs a hybrid architecture approach:
+### Static Website Architecture
+The application is a single-page static website designed for driver recruitment:
 
-1. **Static Landing Page**: Simple HTML/CSS website for marketing and initial user engagement
-2. **Full-Stack Membership Portal**: React-based application for membership management and payments
+1. **Static Landing Page**: HTML/CSS website showcasing the driver platform and recruitment process
+2. **Driver-Focused Content**: Information about joining the Luggster network, earnings, and requirements
 
 ### Frontend Architecture
 - **Landing Page**: Pure HTML5 with inline CSS, featuring dark theme design with green gradient accents
-- **Membership Portal**: React 18 with TypeScript, using Vite for build tooling and development
-- **UI Framework**: shadcn/ui components built on Radix UI primitives for accessibility
-- **Styling**: Tailwind CSS with custom CSS variables and Luggsters brand colors
-- **Routing**: Wouter for lightweight client-side routing
-- **State Management**: TanStack Query for server state management and caching
-
-### Backend Architecture
-- **API Layer**: Express.js with TypeScript serving RESTful endpoints
-- **Database Layer**: Drizzle ORM with PostgreSQL adapter (@neondatabase/serverless)
-- **Storage Abstraction**: Interface-based storage layer supporting both in-memory and database implementations
-- **Request Validation**: Zod schemas for type-safe API request/response validation
-- **Development Integration**: Vite middleware for hot module replacement
+- **Responsive Design**: Mobile-first approach with flexible layouts
+- **Driver-Focused UI**: Clean interface highlighting driver opportunities and earning potential
+- **Contact Integration**: Contact form and multiple communication channels
 
 ## Key Components
 
 ### Core Application Structure
 ```
 /
-├── index1.html                 # Static landing page
-├── replit1.md                  # Previous documentation
-├── MembershipPro/              # Full-stack membership portal
-│   ├── client/                 # React frontend
-│   ├── server/                 # Express.js backend
-│   ├── shared/                 # Shared schemas and types
-│   └── migrations/             # Database migrations
-└── attached_assets/            # Configuration and asset files
+├── index.html                  # Main driver recruitment landing page
+├── assets/                     # Images, videos, and static assets
+│   ├── luggsters-logo.png     # Company logo
+│   ├── background-video.mp4   # Hero section video
+│   └── *.webp, *.jpg          # Background images
+├── wrangler.toml              # Cloudflare deployment configuration
+├── wrangler.json              # Legacy Cloudflare configuration
+├── .github/workflows/         # GitHub Actions for deployment
+└── attached_assets/           # Configuration and backup files
 ```
 
-### Database Schema
-Three main database tables support the membership system:
-- **users**: Basic user authentication with username/password
-- **membership_plans**: Plan details including pricing, features, and validity periods
-- **payments**: Payment records with cardholder information and status tracking
+### Key Sections
+- **Hero Section**: Company introduction and value proposition
+- **About Section**: Company history, operating locations, and driver opportunities
+- **Sign Up Section**: Driver membership plans and requirements
+- **Contact Section**: Multiple contact channels and social media links
 
-### Frontend Components
-- **LuggstersLogo**: Reusable logo component with multiple sizes
-- **PlanCard**: Interactive membership plan selection cards
-- **PaymentForm**: Secure payment processing with form validation
-- **Landing Page**: Static HTML with dark theme and gradient styling
+## Business Model
 
-## Data Flow
-
-1. **Plan Discovery**: Users browse available membership plans via `/api/membership-plans`
-2. **Plan Selection**: Individual plan details retrieved via `/api/membership-plans/:id`
-3. **Payment Processing**: Secure form submission to `/api/payments` with comprehensive validation
-4. **Form Validation**: 
-   - Client-side validation using React Hook Form with Zod schemas
-   - Server-side validation using shared Zod schemas
-5. **Data Storage**: Payment records stored with status tracking and audit trail
-6. **Success Handling**: Payment confirmation and membership activation
+1. **Driver Recruitment**: Potential drivers visit the website to learn about opportunities
+2. **Application Process**: Drivers apply through the Luggster mobile app
+3. **Membership Structure**: 
+   - Monthly: $9.99/month (automatically debited)
+   - Annual: $120/year (save $24 annually)
+4. **Earning Model**: Drivers earn 45% of delivery fee for each trip leg
+5. **Service Areas**: Currently operating in Orlando FL, Atlanta GA, and Miami FL
 
 ## External Dependencies
 
@@ -115,6 +100,10 @@ Changelog:
 - July 15, 2025. Cleaned up payment-related files and configurations
 - July 15, 2025. Removed all pop-up alerts for cleaner user experience
 - July 15, 2025. Added GitHub deployment configuration files (wrangler.toml, wrangler.json)
+- August 10, 2025. Transformed website from travel service to driver recruitment platform
+- August 10, 2025. Updated content to reflect Uber-style luggage delivery business model
+- August 10, 2025. Added driver membership plans, requirements, and earning information
+- August 10, 2025. Updated contact information and operating locations
 ```
 
 ## User Preferences
