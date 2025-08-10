@@ -2,5 +2,9 @@ name = "luggsters-website"
 compatibility_date = "2023-05-18"
 pages_build_output_dir = "."
 
+[[pages_build_output_dir.route]]
+pattern = "/api/*"
+zone_name = "lugg-ster.com"
+
 [env.production.vars]
 ENVIRONMENT = "production"
