@@ -15,9 +15,10 @@ The application operates in two modes:
 - Full interactive features including form submissions
 
 **Production Mode (lugg-ster.com):**
-- Static HTML/CSS website served via Cloudflare Pages
+- Dynamic website served via Cloudflare Pages with Functions
 - Driver recruitment content and information
-- Contact form requires backend deployment for full functionality
+- Live contact form with serverless backend API
+- Resend email integration for form submissions
 
 ### Frontend Architecture
 - **Landing Page**: Pure HTML5 with inline CSS, featuring dark theme design with green gradient accents

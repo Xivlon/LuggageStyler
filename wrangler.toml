@@ -1,13 +1,6 @@
 name = "luggsters-website"
-compatibility_date = "2025-07-15"
+compatibility_date = "2023-05-18"
+pages_build_output_dir = "."
 
-[assets]
-directory = "."
-include = ["*.html", "assets/**/*"]
-exclude = ["node_modules", "attached_assets", "MembershipPro", "package*.json", "wrangler.*", ".github"]
-
-[env.production]
-name = "luggsters-website-production"
-
-[env.staging]
-name = "luggsters-website-staging"
+[env.production.vars]
+ENVIRONMENT = "production"
