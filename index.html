@@ -1073,7 +1073,9 @@
             try {
                 // Send form data to backend
                 console.log('Sending form data:', data);
-                const response = await fetch('/api/contact', {
+                const apiUrl = window.location.origin + '/api/contact';
+                console.log('API URL:', apiUrl);
+                const response = await fetch(apiUrl, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -1084,11 +1086,22 @@
                 console.log('Response status:', response.status);
                 console.log('Response ok:', response.ok);
                 
+                const responseText = await response.text();
+                console.log('Raw response:', responseText);
+                
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    throw new Error(`HTTP error! status: ${response.status}, response: ${responseText}`);
                 }
 
-                const result = await response.json();
+                let result;
+                try {
+                    result = JSON.parse(responseText);
+                } catch (parseError) {
+                    console.error('JSON parse error:', parseError);
+                    console.error('Response text:', responseText);
+                    throw new Error('Server returned invalid JSON response');
+                }
+                
                 console.log('Response result:', result);
 
                 if (result.success) {
