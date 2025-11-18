@@ -1,9 +1,0 @@
-{
-  "name": "luggsters-website",
-  "compatibility_date": "2025-07-15",
-  "assets": {
-    "directory": ".",
-    "include": ["*.html", "assets/**/*"],
-    "exclude": ["node_modules", "attached_assets", "MembershipPro", "package*.json", "wrangler.*", ".github"]
-  }
-}
