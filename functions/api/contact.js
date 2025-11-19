@@ -26,7 +26,7 @@ export async function onRequestPost(context) {
     // Send email using Resend API
     const emailData = {
       from: 'Luggsters Contact Form <onboarding@resend.dev>',
-      to: 'admin@holdmyluggage.com',
+      to: 'Luggsters@gmail.com',
       subject: `New Contact Form Submission: ${subject}`,
       html: `
         <h2>New Contact Form Submission</h2>
